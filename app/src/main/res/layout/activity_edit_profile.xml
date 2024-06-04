@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.editProfile.editProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/background"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/Ubah_Profil"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="95dp"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/photo_profile"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:src="@drawable/businessman"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/camera" />
+
+        <ImageView
+            android:id="@+id/iv_galery"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/galery"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textFullName"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/username"
+            android:textColor="@color/blackbrown"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="16dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_username"
+            android:layout_width="141dp"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/fullname"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/email"
+            android:textColor="@color/blackbrown"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="44dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_email"
+            android:layout_width="141dp"
+            android:layout_marginStart="-58dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:text="@string/email" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveButton"
+        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_gravity="center"
+        android:text="@string/simpan"
+        app:cornerRadius="10dp" />
+
+</LinearLayout>
