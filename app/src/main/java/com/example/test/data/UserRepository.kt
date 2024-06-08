@@ -10,24 +10,24 @@ import androidx.paging.liveData
 import com.example.test.data.pref.UserModel
 import com.example.test.data.pref.UserPreference
 import com.example.test.data.response.ListStoryItem
-import com.example.test.ui.paging.PagingSource
+//import com.example.test.ui.paging.PagingSource
 import kotlinx.coroutines.flow.Flow
 
 class UserRepository private constructor(
     private val userPreference: UserPreference
 ) {
 
-    fun getStories(token: String): LiveData<PagingData<ListStoryItem>> {
-        return Pager(
-            config = PagingConfig(
-                pageSize = 10
-            ),
-            pagingSourceFactory = {
-                Log.d(ContentValues.TAG, "tokenrepository: $token")
-                PagingSource(token)
-            }
-        ).liveData
-    }
+//    fun getStories(token: String): LiveData<PagingData<ListStoryItem>> {
+//        return Pager(
+//            config = PagingConfig(
+//                pageSize = 10
+//            ),
+//            pagingSourceFactory = {
+//                Log.d(ContentValues.TAG, "tokenrepository: $token")
+//                PagingSource(token)
+//            }
+//        ).liveData
+//    }
 
     suspend fun saveSession(user: UserModel) {
         userPreference.saveSession(user)

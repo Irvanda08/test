@@ -22,6 +22,6 @@ class SharingPageViewModel (private val repository: UserRepository) : ViewModel(
         return repository.getSession().asLiveData()
     }
 
-    fun getStory(token: String): LiveData<PagingData<ListStoryItem>> =
-        repository.getStories(token).cachedIn(viewModelScope)
+//    fun getStory(token: String): LiveData<PagingData<ListStoryItem>> =
+//        repository.getStories(token).cachedIn(viewModelScope)
 }

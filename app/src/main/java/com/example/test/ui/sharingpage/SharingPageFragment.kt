@@ -14,13 +14,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.test.data.response.ListStoryItem
 import com.example.test.databinding.FragmentSharingpageBinding
 import com.example.test.ui.ViewModelFactory
-import com.example.test.ui.adapter.LoadingStateAdapter
 import com.example.test.ui.adapter.StoriesAdapter
-import com.example.test.ui.addList.AddListActivity
-import com.example.test.ui.detail.DetailActivity
+import com.example.test.ui.addSharing.AddSharingActivity
+
+//import com.example.test.ui.detail.DetailActivity
 
 class SharingPageFragment : Fragment() {
     private val viewModel by viewModels<SharingPageViewModel> {
@@ -47,22 +46,23 @@ class SharingPageFragment : Fragment() {
             token = user.token
             val adapter = StoriesAdapter()
 
-            mainViewModel.getStory(token).observe(viewLifecycleOwner) { storyList ->
-                adapter.submitData(viewLifecycleOwner.lifecycle, storyList)
-                binding.rvStories.adapter = adapter.withLoadStateFooter(
-                    footer = LoadingStateAdapter {
-                        adapter.retry()
-                    }
-                )
-            }
-            adapter.setOnItemClickCallback(object : StoriesAdapter.OnItemClickCallback {
-                override fun onItemClicked(data: ListStoryItem) {
-                    Intent(requireContext(), DetailActivity::class.java).also {
-                        it.putExtra(DetailActivity.ID, data.id)
-                        startActivity(it)
-                    }
-                }
-            })
+//            mainViewModel.getStory(token).observe(viewLifecycleOwner) { storyList ->
+//                adapter.submitData(viewLifecycleOwner.lifecycle, storyList)
+//                binding.rvStories.adapter = adapter.withLoadStateFooter(
+//                    footer = LoadingStateAdapter {
+//                        adapter.retry()
+//                    }
+//                )
+//            }
+
+//            adapter.setOnItemClickCallback(object : StoriesAdapter.OnItemClickCallback {
+//                override fun onItemClicked(data: ListStoryItem) {
+//                    Intent(requireContext(), DetailActivity::class.java).also {
+//                        it.putExtra(DetailActivity.ID, data.id)
+//                        startActivity(it)
+//                    }
+//                }
+//            })
             mainViewModel.isLoading.observe(viewLifecycleOwner) {
                 showLoading(it)
             }
@@ -76,7 +76,7 @@ class SharingPageFragment : Fragment() {
         binding.rvStories.addItemDecoration(itemDecoration)
 
         binding.fabAdd.setOnClickListener {
-            startActivity(Intent(requireContext(), AddListActivity::class.java))
+            startActivity(Intent(requireContext(), AddSharingActivity::class.java))
         }
     }
 

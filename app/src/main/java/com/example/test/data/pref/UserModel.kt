@@ -5,4 +5,5 @@ data class UserModel(
     val token: String,
     val isLogin: Boolean = false,
     val name: String,
+    val uid: String
 )

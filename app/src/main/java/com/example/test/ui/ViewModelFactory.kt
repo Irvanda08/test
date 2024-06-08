@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.test.data.UserRepository
 import com.example.test.di.Injection
 import com.example.test.ui.addList.AddListViewModel
-import com.example.test.ui.detail.DetailViewModel
+import com.example.test.ui.addSharing.AddSharingViewModel
+//import com.example.test.ui.detail.DetailViewModel
+import com.example.test.ui.editProfile.EditViewModel
 import com.example.test.ui.home.HomeFragment
 import com.example.test.ui.home.HomeViewModel
 import com.example.test.ui.login.LoginViewModel
@@ -27,15 +29,18 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             modelClass.isAssignableFrom(AddListViewModel::class.java) -> {
                 AddListViewModel(repository) as T
             }
-            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
-                DetailViewModel(repository) as T
-            }
+//            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
+//                DetailViewModel(repository) as T
+//            }
             modelClass.isAssignableFrom(SharingPageViewModel::class.java) -> {
                 SharingPageViewModel(repository) as T
             }
-//            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
-//                HomeViewModel(repository) as T
-//            }
+            modelClass.isAssignableFrom(EditViewModel::class.java) -> {
+                EditViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(AddSharingViewModel::class.java) -> {
+                AddSharingViewModel(repository) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

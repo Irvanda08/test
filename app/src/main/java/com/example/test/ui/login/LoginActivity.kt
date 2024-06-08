@@ -25,6 +25,7 @@ import com.example.test.ui.signup.SignupActivity
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
+import kotlin.math.log
 
 class LoginActivity : AppCompatActivity() {
     private val viewModel by viewModels<LoginViewModel> {
@@ -84,10 +85,15 @@ class LoginActivity : AppCompatActivity() {
                     val successResponse = loginResponse.message
                     val token = loginResponse.accessToken
                     val name = loginResponse.name
+                    val uid = loginResponse.userId
                     showToast(successResponse)
 
                     if (token != null && name != null) {
-                        viewModel.saveSession(UserModel(email, token.toString(), true, name))
+                        uid?.let { it1 ->
+                            UserModel(email, token.toString(), true, name,
+                                it1
+                            )
+                        }?.let { it2 -> viewModel.saveSession(it2) }
                     }
                     showLoading(false)
                     showToast(getString(R.string.success_login))
