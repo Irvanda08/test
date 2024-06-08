@@ -1,5 +1,6 @@
 package com.example.test.ui
 
+import EditPasswordViewModel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -9,8 +10,6 @@ import com.example.test.ui.addList.AddListViewModel
 import com.example.test.ui.addSharing.AddSharingViewModel
 //import com.example.test.ui.detail.DetailViewModel
 import com.example.test.ui.editProfile.EditViewModel
-import com.example.test.ui.home.HomeFragment
-import com.example.test.ui.home.HomeViewModel
 import com.example.test.ui.login.LoginViewModel
 import com.example.test.ui.main.MainViewModel
 import com.example.test.ui.sharingpage.SharingPageViewModel
@@ -40,6 +39,9 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(AddSharingViewModel::class.java) -> {
                 AddSharingViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(EditPasswordViewModel::class.java) -> {
+                EditPasswordViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

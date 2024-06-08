@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.test.R
 import com.example.test.databinding.FragmentProfileBinding
 import com.example.test.ui.ViewModelFactory
+import com.example.test.ui.editPassword.editPasswordActivity
 import com.example.test.ui.editProfile.editProfileActivity
 import com.example.test.ui.main.MainViewModel
 import com.example.test.ui.welcome.WelcomeActivity
@@ -50,6 +51,10 @@ class ProfileFragment : Fragment() {
             intent.putExtra("username", binding.nameEditTextLayout.text.toString())
             intent.putExtra("email", binding.emailEditTextLayout.text.toString())
             startActivity(intent)
+        }
+
+        binding.btnChangePassword.setOnClickListener {
+            startActivity(Intent(requireContext(), editPasswordActivity::class.java))
         }
 
         viewModel.getSession().observe(viewLifecycleOwner) { user ->

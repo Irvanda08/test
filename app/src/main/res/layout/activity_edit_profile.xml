@@ -21,6 +21,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
+            android:layout_marginEnd="105dp"
             android:src="@drawable/background"/>
 
         <TextView
@@ -31,7 +32,6 @@
             android:textAlignment="center"
             android:textStyle="bold"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="95dp"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -130,10 +130,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveButton"
-        android:layout_marginTop="70dp"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/brownnew"
         android:fontFamily="@font/poppins_medium"
         android:layout_gravity="center"
         android:text="@string/simpan"

@@ -6,6 +6,7 @@ import com.example.test.data.response.LoginResponse
 import com.example.test.data.response.RegisterResponse
 import com.example.test.data.response.SharingResponse
 import com.example.test.data.response.StoryResponse
+import com.example.test.data.response.UpdatePasswordResponse
 import com.example.test.data.response.UpdateProfileResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -81,7 +82,20 @@ interface ApiService {
         @Part imgUrl: MultipartBody.Part?
 //        @Body requestBody: RequestBody
     ): Call<SharingResponse>
+
+    @PUT("users/change-password/{user_id}")
+    fun changePassword(
+        @Header("Authorization") token: String,
+        @Path("user_id") userId: String,
+        @Body passwordChangeRequest: PasswordChangeRequest
+    ): Call<UpdatePasswordResponse>
 }
+
+data class PasswordChangeRequest(
+    val oldPassword: String,
+    val newPassword: String,
+    val confirmPassword: String
+)
 
 //data class PostSharingRequest(
 //    val content: String,

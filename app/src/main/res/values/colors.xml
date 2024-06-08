@@ -10,5 +10,6 @@
     <color name="brownnew">#665C51</color>
     <color name="red">#EE4E4E</color>
     <color name="blue">#4793AF</color>
+    <color name="btnblue">#4682B4</color>
     <color name="brownbtn">#C8BBB2</color>
 </resources>

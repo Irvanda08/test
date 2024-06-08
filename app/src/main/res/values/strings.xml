@@ -54,6 +54,11 @@
     <string name="error_password_requirement">Minimal 1 Huruf Kapital</string>
     <string name="success_profile_update">Update Berhasil</string>
     <string name="empty_image_warning">Image Kosong</string>
+    <string name="ubah_password">Ubah Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="masukkan_password_baru">Masukkan Password Baru</string>
+    <string name="ulangi_password_baru">Ulangi Password Baru</string>
+    <string name="masukkan_password_lama">Masukkan Password Lama</string>
 
     <string-array name="data_name">
         <item>Anjing</item>
